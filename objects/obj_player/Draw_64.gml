@@ -44,3 +44,9 @@ else if(runOn == 2) {
 	draw_set_halign(fa_left);
 	draw_text(20,20,"0 meter");
 }
+
+draw_set_font(fnt_cocogoose_18);
+draw_set_color(c_black);
+draw_set_valign(fa_center);
+draw_set_halign(fa_right);
+draw_text(window_get_width()-20,20,string(money)+" $");

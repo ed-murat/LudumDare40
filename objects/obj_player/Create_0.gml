@@ -17,3 +17,5 @@ endText = "Finish !";
 endTextFade = 0;
 
 runOn = 0;
+
+money = 0;

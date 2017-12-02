@@ -17,7 +17,7 @@ if (vmov < 15) vmov += grav;
 
 #region Jumps
 
-if (place_meeting(x,y+1,par_collision))
+if (place_meeting(x,y+1,obj_collision))
 {
     jump = maxJump;
 }
@@ -39,9 +39,9 @@ if (vmov < 0) && (!inputUpHeld) vmov = max(vmov,-vspd/4);
 #region Movement & Collsion
 
 //Horizontal collisions
-if(place_meeting(x+hmov,y,par_collision))
+if(place_meeting(x+hmov,y,obj_collision))
 {
-	while(!place_meeting(x+sign(hmov),y,par_collision))
+	while(!place_meeting(x+sign(hmov),y,obj_collision))
 	{
 		x = x + sign(hmov)
 	}
@@ -50,9 +50,9 @@ if(place_meeting(x+hmov,y,par_collision))
 x = x + hmov;
 
 //Vertical collisions
-if(place_meeting(x,y+vmov,par_collision))
+if(place_meeting(x,y+vmov,obj_collision))
 {
-	while(!place_meeting(x,y+sign(vmov),par_collision))
+	while(!place_meeting(x,y+sign(vmov),obj_collision))
 	{
 		y = y + sign(vmov)
 	}
