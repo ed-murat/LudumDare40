@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "48143656-c9d1-489e-9a85-8b8fcaa1dd71",
+            "Value": {
+                "id": "d246e223-8f5e-44fc-8474-495393d2888a",
+                "resourcePath": "notes\\Credits.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "5848c9f1-8ccb-4df6-9b8e-b1f419e0ca64",
             "Value": {
                 "id": "e056b5c3-972d-427a-9ab9-8b687e5f96bb",
