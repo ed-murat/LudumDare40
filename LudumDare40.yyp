@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "398179e6-7e26-40af-b2a0-378da82d750f",
+            "Value": {
+                "id": "82d553de-ebf3-4090-b69c-aef4cde40633",
+                "resourcePath": "sprites\\spr_dirt_topleft\\spr_dirt_topleft.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3d1e618b-aa53-4924-8b38-49f4466ce3b5",
             "Value": {
                 "id": "cf0de421-d869-42dd-8fc6-a58acd0ab388",
@@ -204,6 +212,14 @@
                 "id": "7d281464-0a72-4af4-bfe3-48e3f3b941a0",
                 "resourcePath": "objects\\obj_coppercoin\\obj_coppercoin.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4645d81a-58c2-4590-aeb7-f8afb62d8583",
+            "Value": {
+                "id": "3dae7987-899d-40a7-988e-3279ca971b29",
+                "resourcePath": "sprites\\spr_damage\\spr_damage.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -239,6 +255,14 @@
             }
         },
         {
+            "Key": "544ea6fd-4e58-4407-bd00-a01916d111ea",
+            "Value": {
+                "id": "bcce381d-d103-492f-b7b4-43c0192f598c",
+                "resourcePath": "objects\\obj_damage\\obj_damage.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5848c9f1-8ccb-4df6-9b8e-b1f419e0ca64",
             "Value": {
                 "id": "e056b5c3-972d-427a-9ab9-8b687e5f96bb",
@@ -251,6 +275,14 @@
             "Value": {
                 "id": "57f28604-3193-4e97-853e-1e423d75d07b",
                 "resourcePath": "sprites\\spr_dirt_left\\spr_dirt_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "604afd52-e8e5-4aaa-957c-43cbea5be063",
+            "Value": {
+                "id": "b43bd1f8-baca-4dbd-9731-d8e925014a15",
+                "resourcePath": "sprites\\spr_dirt_topright\\spr_dirt_topright.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -356,6 +388,14 @@
                 "id": "010182f5-4cc8-4a9e-9cc8-e09c578757dd",
                 "resourcePath": "views\\977eaea3-9206-4e5b-b69e-f2f0295de683.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "99cc7277-444b-4896-b49a-b7b51755545b",
+            "Value": {
+                "id": "1573a92d-64bb-4c7d-b578-bc4217e94ed6",
+                "resourcePath": "sprites\\spr_player_fall\\spr_player_fall.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

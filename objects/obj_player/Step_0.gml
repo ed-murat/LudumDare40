@@ -8,10 +8,16 @@ inputDown = keyboard_check(ord("S")) || keyboard_check(vk_down);
 
 #region Inputs react
 
+if(!runOn) {
+	inputUp = 0;
+	inputUpHeld = 0;
+	inputDown = 0;
+}
+
 hdir = 1;
 hmov = hdir * hspd;
 
-if (vmov < 15) vmov += grav;
+if (vmov < 100) vmov += grav;
 
 #endregion
 
@@ -32,11 +38,11 @@ if (inputUp) && (jump > 0)
     vmov = -vspd;
 }
 
-if (vmov < 0) && (!inputUpHeld) vmov = max(vmov,-vspd/4);
+if (vmov < 0) && (!inputUpHeld) vmov = max(vmov,-vspd/2);
 
 #endregion
 
-#region Movement & Collsion
+#region Collsions
 
 //Horizontal collisions
 if(place_meeting(x+hmov,y,obj_collision))
@@ -47,7 +53,6 @@ if(place_meeting(x+hmov,y,obj_collision))
 	}
 	hmov = 0;
 }
-x = x + hmov;
 
 //Vertical collisions
 if(place_meeting(x,y+vmov,obj_collision))
@@ -58,6 +63,62 @@ if(place_meeting(x,y+vmov,obj_collision))
 	}
 	vmov = 0;
 }
+
+#endregion
+
+#region Damages
+
+//Horizontal damage
+if(place_meeting(x+hmov,y,obj_damage))
+{
+	while(!place_meeting(x+sign(hmov),y,obj_damage))
+	{
+		x = x + sign(hmov)
+	}
+	hmov = 0;
+	hHitted = 1;
+}
+else {
+	hHitted = 0;
+	hNewHit = 1;
+}
+
+//Vertical damage
+if(place_meeting(x,y+vmov,obj_damage))
+{
+	while(!place_meeting(x,y+sign(vmov),obj_damage))
+	{
+		y = y + sign(vmov)
+	}
+	vmov = 0;
+	vHitted = 1;
+}
+else {
+	vHitted = 0;
+	vNewHit = 1;
+}
+
+if(hHitted && hNewHit) {
+	var loseOnHit = floor(money * 0.05);
+	loss += loseOnHit;
+	money -= loseOnHit;
+	
+	hNewHit = 0;
+}
+
+if(vHitted && vNewHit) {
+	var loseOnHit = floor(money * 0.05);
+	loss += loseOnHit;
+	money -= loseOnHit;
+	
+	vNewHit = 0;
+}
+
+#endregion
+
+#region Movement
+
+x += hmov;
 y += vmov;
 
 #endregion
