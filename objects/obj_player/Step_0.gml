@@ -1,7 +1,7 @@
 #region Inputs
 
-inputUp = keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_up) || mouse_check_button_pressed(mb_left);
-inputUpHeld = keyboard_check(ord("Z")) || keyboard_check(vk_up) || mouse_check_button(mb_left);
+inputUp = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || mouse_check_button_pressed(mb_left);
+inputUpHeld = keyboard_check(ord("W")) || keyboard_check(vk_up) || mouse_check_button(mb_left);
 inputDown = keyboard_check(ord("S")) || keyboard_check(vk_down) || mouse_check_button(mb_right);
 
 #endregion
