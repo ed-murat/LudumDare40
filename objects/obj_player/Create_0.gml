@@ -18,7 +18,14 @@ endText = "Finish !";
 endTextFade = 0;
 
 money = 0;
-loss = 0;
+tax = 5;
 
+guiRed = 0;
+guiGB = 0;
+
+alphaEnd = 0;
+
+wallHit = 0;
+fallHit = 0;
 hitted = 0;
 newHit = 1;

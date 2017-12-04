@@ -1,14 +1,14 @@
 #region Inputs
 
-inputUp = keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_up);
-inputUpHeld = keyboard_check(ord("Z")) || keyboard_check(vk_up);
-inputDown = keyboard_check(ord("S")) || keyboard_check(vk_down);
+inputUp = keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_up) || mouse_check_button_pressed(mb_left);
+inputUpHeld = keyboard_check(ord("Z")) || keyboard_check(vk_up) || mouse_check_button(mb_left);
+inputDown = keyboard_check(ord("S")) || keyboard_check(vk_down) || mouse_check_button(mb_right);
 
 #endregion
 
 #region Inputs react
 
-if(!runOn) {
+if(runOn != 1) {
 	inputUp = 0;
 	inputUpHeld = 0;
 	inputDown = 0;
@@ -66,7 +66,7 @@ if(place_meeting(x,y+vmov,obj_collision))
 
 #endregion
 
-#region Damages
+#region Damage
 
 //Horizontal damage
 if(place_meeting(x+hmov,y,obj_damage))
@@ -81,6 +81,12 @@ if(place_meeting(x+hmov,y,obj_damage))
 else {
 	hHitted = 0;
 	hNewHit = 1;
+}
+
+if(hHitted && hNewHit) {
+	wallHit += 1;
+	money -= 10;
+	hNewHit = 0;
 }
 
 //Vertical damage
@@ -98,20 +104,54 @@ else {
 	vNewHit = 1;
 }
 
-if(hHitted && hNewHit) {
-	var loseOnHit = floor(money * 0.05);
-	loss += loseOnHit;
-	money -= loseOnHit;
-	
-	hNewHit = 0;
+if(vHitted && vNewHit) {
+	wallHit += 1;
+	money -= 10;
+	vNewHit = 0;
 }
 
-if(vHitted && vNewHit) {
-	var loseOnHit = floor(money * 0.05);
-	loss += loseOnHit;
-	money -= loseOnHit;
+//Fall
+if(place_meeting(x,y,obj_death))
+{
+	fallHit += 1;
+	money -= 250;
 	
-	vNewHit = 0;
+	var nearestCP = instance_nearest(x,y,obj_checkpoint);
+	x = nearestCP.x;
+	y = nearestCP.y;
+}
+
+#endregion
+
+#region Tax
+
+if(money>=6000) { 
+	tax = 50 + floor((money-6000)/100);
+	guiRed = 255;
+}
+if(money<6000) {
+	tax = 25;
+	guiRed = 127;
+}
+if(money<5000) {
+	tax = 12;
+	guiRed = 63;
+}
+if(money<4000) {
+	tax = 10;
+	guiRed = 31;
+}
+if(money<3000) {
+	tax = 8;
+	guiRed = 15;
+}
+if(money<2000) {
+	tax = 6;
+	guiRed = 7;
+}
+if(money<1000) {
+	tax = 5;
+	guiRed = 3;
 }
 
 #endregion
